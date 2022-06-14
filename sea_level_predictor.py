@@ -14,7 +14,7 @@ def draw_plot():
 
     # Create first line of best fit
     reg = linregress(x, y)
-    x_pred = pd.Series([i for i in range(1880, 2050, 1)])
+    x_pred = pd.Series([i for i in range(1880, 2051, 1)])
     y_pred = reg.intercept + reg.slope * x_pred
     plt.plot(x_pred, y_pred, 'g')
 
@@ -23,7 +23,7 @@ def draw_plot():
     x_modern = df_modern["Year"]
     y_modern = df_modern["CSIRO Adjusted Sea Level"]
     reg_modern = linregress(x_modern, y_modern)
-    x_modern_pred = pd.Series([i for i in range(2000, 2050, 1)])
+    x_modern_pred = pd.Series([i for i in range(2000, 2051, 1)])
     y_modern_pred = reg_modern.intercept + reg_modern.slope * x_modern_pred
     plt.plot(x_modern_pred, y_modern_pred, 'r')
 
