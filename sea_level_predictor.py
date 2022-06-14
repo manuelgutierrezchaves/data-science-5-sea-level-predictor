@@ -9,10 +9,14 @@ def draw_plot():
     # Create scatter plot
     x = df["Year"]
     y = df["CSIRO Adjusted Sea Level"]
-    plt.scatter(x, y)
+    fig, ax = plt.subplots()
+    plt.scatter(x, y, c='red')
 
     # Create first line of best fit
-
+    reg = linregress(x, y)
+    x_pred = pd.Series([i for i in range(1880, 2050, 1)])
+    y_pred = reg.intercept + reg.slope * x_pred
+    plt.plot(x_pred, y_pred, 'g')
 
     # Create second line of best fit
 
