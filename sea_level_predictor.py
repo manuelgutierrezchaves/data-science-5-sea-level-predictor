@@ -28,7 +28,9 @@ def draw_plot():
     plt.plot(x_modern_pred, y_modern_pred, 'r')
 
     # Add labels and title
-
+    plt.title("Rise in Sea Level")
+    plt.xlabel("Year")
+    plt.ylabel("Sea Level (inches)")
     
     # Save plot and return data for testing (DO NOT MODIFY)
     plt.savefig('sea_level_plot.png')
