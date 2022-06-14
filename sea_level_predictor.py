@@ -4,10 +4,12 @@ from scipy.stats import linregress
 
 def draw_plot():
     # Read data from file
-
+    df = pd.read_csv("epa-sea-level.csv")
 
     # Create scatter plot
-
+    x = df["Year"]
+    y = df["CSIRO Adjusted Sea Level"]
+    plt.scatter(x, y)
 
     # Create first line of best fit
 
@@ -21,3 +23,5 @@ def draw_plot():
     # Save plot and return data for testing (DO NOT MODIFY)
     plt.savefig('sea_level_plot.png')
     return plt.gca()
+
+draw_plot()
